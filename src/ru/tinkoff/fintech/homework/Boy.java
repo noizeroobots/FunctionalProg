@@ -1,32 +1,30 @@
 package ru.tinkoff.fintech.homework;
 
-import java.util.ArrayList;
-
 public class Boy {
 
-    private String name;
+    private final String name;
     private int age;
 
-    public Boy(String name, int age) {
+    public Boy(final String name, final int age) {
         this.name = name;
         this.age = age;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
+    public final void setAge(final int age) {
         this.age = age;
     }
 
-    public int getAge() { return age;}
+    public final int getAge() {
+        return age;
+    }
 
     @Override
-    public String toString() { return name + "-" + age; }
+    public final String toString() {
+        return name + "-" + age;
+    }
 
 }

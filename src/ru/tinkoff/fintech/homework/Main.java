@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Main {
 
-    private static final ArrayList<Boy> boys = new ArrayList<>() {{
+    private static final ArrayList<Boy> BOYS = new ArrayList<>() {{
         add(new Boy("Николай", 68));
         add(new Boy("Пётр", 53));
         add(new Boy("Василий", 25));
@@ -22,9 +22,9 @@ public class Main {
         add(new Boy("Яков", 30));
     }};
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
-        List<Boy> fullAgeBoys = boys
+        List<Boy> fullAgeBoys = BOYS
                 .stream()
                 .filter(boy -> boy.getAge() >= 18)
                 .collect(Collectors.toList());
@@ -40,7 +40,7 @@ public class Main {
         Map<String, Integer> boysInfo = new HashMap<String, Integer>();
         for (String name : filtered) {
 
-            for (Boy boy1 : boys) {
+            for (Boy boy1 : BOYS) {
                 if (name.equals(boy1.getName())) {
                     if (!boysInfo.containsKey(name)) {
                         boysInfo.put(name, 0);
